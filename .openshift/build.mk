@@ -1,8 +1,8 @@
 PCRE_VERSION   = 8.33
-APR_VERSION    = 1.5.0
-APU_VERSION    = 1.5.3
+APR_VERSION    = 1.4.8
+APU_VERSION    = 1.5.0
 APACHE_VERSION = 2.4.6
-PHP_VERSION    = 5.5.6
+PHP_VERSION    = 5.5.5
 
 all: httpd/modules/libphp5.so
 .PHONY: all
