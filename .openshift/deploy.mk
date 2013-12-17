@@ -26,7 +26,7 @@ ini: $(PHPINI)
 	$(PECLCMD) config-set php_ini $(OPENSHIFT_DATA_DIR)/$(PHPINI)
 	$(PEARCMD) config-set php_ini $(OPENSHIFT_DATA_DIR)/$(PHPINI)
 
-$(EXTDIR)/%: | httpd/modules/libphp5.so
+$(EXTDIR)/%: | httpd/modules/libphp5.so $(CURRENT)/.openshift/pecl.dep
 	aE=($(EXTNAMES)); aV=($(VERSIONS)); aL=($(LIBNAMES)); \
 	for ((i=0; i < $${#aE[@]}; i++)); do \
 		if test $* = $${aL[$$i]}; then \
