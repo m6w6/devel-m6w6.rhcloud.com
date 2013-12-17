@@ -9,5 +9,5 @@
 
 raphf,		stable
 propro,		stable
-pecl_http,	beta,		http.so
+pecl_http,	stable,		http.so
 markdown,	stable,		discount.so
