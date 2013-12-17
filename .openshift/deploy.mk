@@ -9,6 +9,8 @@ LIBNAMES = $(shell $(CURRENT)/.openshift/dep.awk < $(CURRENT)/.openshift/pecl.de
 EXTFILES = $(addprefix $(EXTDIR)/, $(LIBNAMES))
 PROJECTS = $(wildcard $(CURRENT)/*/openshift.mk)
 
+export
+
 all: ini $(EXTFILES) httpd/conf/httpd.conf mk-projects
 	for ext in $(LIBNAMES); do grep -Eq "^[[:space:]]*extension[[:space:]]*=[[:space:]]*$$ext" $(PHPINI) || echo "extension=$$ext" >> $(PHPINI); done
 
