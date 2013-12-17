@@ -7,11 +7,15 @@ EXTNAMES = $(shell $(CURRENT)/.openshift/dep.awk < $(CURRENT)/.openshift/pecl.de
 VERSIONS = $(shell $(CURRENT)/.openshift/dep.awk < $(CURRENT)/.openshift/pecl.dep | cut -f2)
 LIBNAMES = $(shell $(CURRENT)/.openshift/dep.awk < $(CURRENT)/.openshift/pecl.dep | cut -f3)
 EXTFILES = $(addprefix $(EXTDIR)/, $(LIBNAMES))
+PROJECTS = $(wildcard $(CURRENT)/*/openshift.mk)
 
-all: ini $(EXTFILES) httpd/conf/httpd.conf
+all: ini $(EXTFILES) httpd/conf/httpd.conf mk-projects
 	for ext in $(LIBNAMES); do grep -Eq "^[[:space:]]*extension[[:space:]]*=[[:space:]]*$$ext" $(PHPINI) || echo "extension=$$ext" >> $(PHPINI); done
 
-.PHONY: ini all
+.PHONY: ini all mk-projects
+
+mk-projects:
+	$(foreach project, $(PROJECTS), cd $(dir $(project)) && $(MAKE) -f openshift.mk)
 
 $(CURRENT)/public:
 	mkdir -p $@
