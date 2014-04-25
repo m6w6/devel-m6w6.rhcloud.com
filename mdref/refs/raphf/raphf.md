@@ -4,7 +4,7 @@
 
 The **"Resource and Persistent Handle Factory"** extension provides facilities to manage those in a convenient manner.
 
-> **Note:** This extension mostly only provides infrastructure for other extensions.
+> **Note:** This extension mostly only provides infrastructure for other extensions, see http://php.github.io/pecl-php-raphf/.
 
 ## Installation:
 
