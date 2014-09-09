@@ -56,13 +56,15 @@ class RefEntry
 				continue;
 			}
 			if (strlen($link)) {
-				if ($upper && !ctype_upper($parts[$i][0])) {
+				if ($parts[$i][0] === ":") {
+					$link = "";
+				} elseif ($upper && !ctype_upper($parts[$i][0])) {
 					$link .= "::";
 				} else {
 					$link .= "\\";
 				}
 			}
-			$link .= $parts[$i];
+			$link .= trim($parts[$i], ": ");
 			$upper = ctype_upper($parts[$i][0]);
 		}
 		return $link;
@@ -112,7 +114,7 @@ class RefEntry
 	function readTitle() {
 		$this->openFile();
 		fseek($this->file, 1, SEEK_SET);
-		return htmlspecialchars(fgets($this->file));
+		return fgets($this->file);
 	}
 	
 	/**
@@ -124,7 +126,7 @@ class RefEntry
 		fseek($this->file, 0, SEEK_SET);
 		fgets($this->file);
 		fgets($this->file);
-		return htmlspecialchars(fgets($this->file));
+		return fgets($this->file);
 	}
 	
 	/**
