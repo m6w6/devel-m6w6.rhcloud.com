@@ -28,3 +28,7 @@ cd -
 cd mdref/refs/propro
 git merge -s recursive -X subtree=. -m "merge mdref-propro" mdref-propro
 cd -
+# mdref-pq
+cd mdref/refs/pq
+git merge -s recursive -X subtree=. -m "merge mdref-pq" mdref-pq
+cd -
