@@ -6,29 +6,12 @@ git checkout mdref && git pull
 git checkout mdref-http && git pull
 git checkout mdref-raphf && git pull
 git checkout mdref-propro && git pull
+git checkout mdref-pq && git pull
 #
 git checkout master
-# openshift-php
-cd .openshift
-git merge -s recursive -X subtree=. -m "merge openshift-php" openshift-php
-cd -
-# mdref
-cd mdref
-git merge -s recursive -X subtree=. -m "merge mdref" mdref
-cd -
-# mdref-http
-cd mdref/refs/http
-git merge -s recursive -X subtree=. -m "merge mdref-http" mdref-http
-cd -
-# mdref-raphf
-cd mdref/refs/raphf
-git merge -s recursive -X subtree=. -m "merge mdref-raphf" mdref-raphf
-cd -
-# mdref-propro
-cd mdref/refs/propro
-git merge -s recursive -X subtree=. -m "merge mdref-propro" mdref-propro
-cd -
-# mdref-pq
-cd mdref/refs/pq
-git merge -s recursive -X subtree=. -m "merge mdref-pq" mdref-pq
-cd -
+git merge -s recursive -X subtree=.openshift/ -m "merge openshift-php" openshift-php
+git merge -s recursive -X subtree=mdref/ -m "merge mdref" mdref
+git merge -s recursive -X subtree=mdref/refs/http/ -m "merge mdref-http" mdref-http
+git merge -s recursive -X subtree=mdref/refs/raphf/ -m "merge mdref-raphf" mdref-raphf
+git merge -s recursive -X subtree=mdref/refs/propro/ -m "merge mdref-propro" mdref-propro
+git merge -s recursive -X subtree=mdref/refs/pq/ -m "merge mdref-pq" mdref-pq
