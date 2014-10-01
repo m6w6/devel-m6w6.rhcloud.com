@@ -4,7 +4,9 @@
 
 The "Property Proxy" extension provides a fairly transparent proxy for internal object properties hidden in custom non-zval implementations.
 
-> **Note:** This extension mostly only provides infrastructure for other extensions, see http://php.github.io/pecl-php-propro/.
+> ***NOTE:***
+  This extension mostly only provides infrastructure for other extensions.
+  See the [API docs here](http://php.github.io/pecl-php-propro/).
 
 See the php\PropertyProxy class, for the user-land visible part of the implementation.
 
