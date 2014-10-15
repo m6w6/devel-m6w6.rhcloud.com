@@ -16,4 +16,4 @@ git merge -s recursive -X subtree=mdref/refs/http/ -m "merge mdref-http" mdref-h
 git merge -s recursive -X subtree=mdref/refs/raphf/ -m "merge mdref-raphf" mdref-raphf
 git merge -s recursive -X subtree=mdref/refs/propro/ -m "merge mdref-propro" mdref-propro
 git merge -s recursive -X subtree=mdref/refs/pq/ -m "merge mdref-pq" mdref-pq
-git merge -s recursive -X subtree=mdref/refs/pq-gateway/ -m "merge mdref-pq-gateway" mdref-pq-gatway
+git merge -s recursive -X subtree=mdref/refs/pq-gateway/ -m "merge mdref-pq-gateway" mdref-pq-gateway
