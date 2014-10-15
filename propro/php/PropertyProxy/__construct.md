@@ -4,11 +4,11 @@ Create a new property proxy for the property $member of $object.
 
 ## Params:
 
-* mixed reference &$object  
+* mixed reference &$object
   The storage from which to reference the property.
-* string $member  
+* string $member
   The name of the property to reference.
-* php\PropertyProxy $parent = NULL  
+* php\PropertyProxy $parent = NULL
   Any parent property proxy.
 
 ## Example:
