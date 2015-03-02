@@ -1,0 +1,37 @@
+#!/bin/sh
+set -e
+#
+if test $# -lt 1; then
+	echo "Usage: $0 <mdref>"
+	echo
+	echo "	<mdref> Name of the reference, e.g. pq-gateway."
+	echo
+	exit 1
+fi
+#
+mdref="$1"
+#
+echo
+echo "Fetching remote mdref-$mdref/master ..."
+git remote add mdref-$mdref git@github.com:m6w6/mdref-$mdref.git
+git fetch mdref-$mdref
+git checkout -b mdref-$mdref mdref-$mdref/master --
+#
+echo
+echo "Importing tree ..."
+git checkout master
+git read-tree --prefix=mdref/refs/$mdref/ -u mdref-$mdref
+git ci -m "import mdref-$mdref"
+#
+#echo
+#echo "Recursive merge ..."
+git merge -s recursive -X subtree=mdref/refs/$mdref/ -m "merge mdref-$mdref" mdref-$mdref
+#
+echo
+echo "Done!"
+echo
+echo "Don't forget to add mdref-$mdref to ./synthesize!"
+echo
+echo "git checkout mdref-$mdref && git pull"
+echo "git merge -s recursive -X subtree=mdref/refs/$mdref/ -m \"merge mdref-$mdref\"" mdref-$mdref
+echo
