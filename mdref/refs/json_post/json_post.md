@@ -10,7 +10,7 @@ Parse JSON request bodies into `$_POST`.
 
 This tiny extension provides a PHP content type handler for `text/json` to PHP's form data parser. 
 
-If the `Content-Type` of an incoming request is `text/json`, the JSON contents of the request body will by parsed into `$_POST`.
+If the `Content-Type` of an incoming request is `application/json` or `text/json`, the JSON contents of the request body will by parsed into `$_POST`.
 
 ## Installation:
 
