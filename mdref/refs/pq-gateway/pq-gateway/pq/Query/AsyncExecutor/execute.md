@@ -2,9 +2,6 @@
 
 Execute the query asynchronously and let the callback process the result on resolve.
 
-> ***NOTE:***  
-  This asynchronous executor implementation depends on [React/Promise](https://github.com/reactphp/promise).
-
 ## Params:
 
 * pq\Query\Writer $query  
